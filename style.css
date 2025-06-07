@@ -1,0 +1,163 @@
+/* CSS ที่คุณให้มา (ใช้เป็นฐาน) */
+body {
+  font-family: 'Outfit', 'Kanit', sans-serif;
+  margin: 0;
+
+  /* ไล่เฉดเทาดำเข้มๆนัวๆ */
+  background: linear-gradient(
+    135deg,
+    #050505 0%,        /* ดำเข้มมาก */
+    #101314 40%,       /* เทาดำเข้ม */
+    #17181a 70%,       /* เทาดำกลาง */
+    #0f1213 100%       /* กลับมาเทาดำเข้ม */
+  );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+nav {
+  position: fixed;
+  top: 15px;
+  width: 100%;
+  z-index: 50;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem; /* เริ่มต้นแคบ */
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  border-radius: 8px;
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, gap 0.3s ease;
+  gap: 24px; /* เริ่มต้นแคบ */
+}
+
+nav.scrolled .nav-inner {
+background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  gap: 120px; /* เว้นช่องว่างเยอะตอนเลื่อนลง */
+  padding: 0 4rem; /* ขยาย padding ซ้ายขวา */
+  height: 64px;
+}
+
+/* ถ้าต้องการเพิ่ม collapsed แบบหุบสุดในแนวนอนก็เพิ่มได้ */
+nav.collapsed .nav-inner {
+  padding: 0 0.5rem;
+  gap: 8px;
+  height: 48px;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  background-color: transparent !important;
+}
+a.nav-link {
+  color: white !important;          /* สีขาว */
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: none !important;      /* ปิด transition */
+}
+
+a.nav-link:hover {
+  color: white !important;          /* ไม่เปลี่ยนสีตอน hover */
+  cursor: pointer !important;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* แนวตั้งตรงกลาง */
+  align-items: center;      /* แนวนอนตรงกลาง */
+  min-height: 100vh;        /* เต็มหน้าจอ */
+  padding-top: 6rem;        /* เผื่อ header */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+  color: #c0c0c0;           /* สีข้อความทั่วไปเงินๆ */
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+  background: linear-gradient(90deg, #f0f0f0, #d4d4d4, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #fff; /* cursor effect */
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+/* Cursor blink animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+#home p {
+  font-size: 1.125rem;
+  color: #d0d0d0; /* เงินๆ อ่อน */
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;  /* จัดข้อความเรียงในแนวตั้ง */
+    justify-content: center; /* กึ่งกลางแนวตั้ง */
+    align-items: center;     /* กึ่งกลางแนวนอน */
+    min-height: 300px;       /* ความสูงขั้นต่ำ เพื่อให้มันกึ่งกลางได้ชัดเจน */
+    text-align: center;
+    color: white;
+    padding: 5rem 1rem;      /* สามารถปรับได้ตามชอบ */
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;  /* จัดข้อความเรียงในแนวตั้ง */
+  justify-content: center; /* กึ่งกลางแนวตั้ง */
+  align-items: center;     /* กึ่งกลางแนวนอน */
+  min-height: 300px;       /* ความสูงขั้นต่ำ เพื่อให้มันกึ่งกลางได้ชัดเจน */
+  text-align: center;
+  color: white;
+  padding: 5rem 1rem;      /* สามารถปรับได้ตามชอบ */
+}
+
+#footer {
+  bottom: 0;
+  height: 180px; /* ความสูงของ footer */
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.9); /* โทนดำโปร่งแสง */
+  color: #bbb; /* สีเงินอ่อน */
+  text-align: center;
+  padding: 1.5rem 1rem;  /* padding ยังอยู่ได้ถ้าต้องการ */
+  font-size: 0.9rem;
+  font-family: 'Outfit', 'Kanit', sans-serif;
+  user-select: none;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.7);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;  /* ให้ข้อความเรียงในแนวตั้ง */
+  justify-content: center; /* จัดกึ่งกลางแนวตั้ง */
+  align-items: center;     /* จัดกึ่งกลางแนวนอน */
+}
+
+
+#footer p {
+  margin: 2px 0;
+}
